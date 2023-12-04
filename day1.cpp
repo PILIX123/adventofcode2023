@@ -106,7 +106,7 @@ int partTwo(vector<string> inputList)
 
 int main()
 {
-    ifstream infile("inputday1.txt");
+    ifstream infile("input/inputday1.txt");
     vector<string> inputList{};
     string line;
     while (getline(infile, line))
