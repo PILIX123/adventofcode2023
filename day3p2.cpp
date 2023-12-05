@@ -8,6 +8,7 @@
 #include <iomanip>
 #define ll long long
 
+// code from u/stikydude on reddit  https://gist.github.com/Jokezor/29ecf5caaa3fbe83a12507d7c62a831b
 using namespace std;
 
 ll get_number(string row, pair<int, int> coords)
