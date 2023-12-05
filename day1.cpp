@@ -114,9 +114,7 @@ int main()
         inputList.push_back(line);
     }
     infile.close();
-    int output1 = partOne(inputList);
-    int output2 = partTwo(inputList);
 
-    cout << output1 << endl;
-    cout << output2 << endl;
+    cout << partOne(inputList) << endl;
+    cout << partTwo(inputList) << endl;
 }
