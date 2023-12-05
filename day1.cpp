@@ -75,18 +75,7 @@ int partTwo(vector<string> inputList)
         }
         sort(posValList.begin(), posValList.end(), [](const auto &a, const auto &b)
              { return a.first < b.first; });
-        if (posValList.size() == 0)
-        {
-            break;
-        }
-        if (posValList.size() < 2)
-        {
-            val += get<1>(posValList[0]) * 10 + get<1>(posValList[0]);
-        }
-        else
-        {
-            val += get<1>(posValList[0]) * 10 + get<1>(posValList[posValList.size() - 1]);
-        }
+        val += get<1>(posValList[0]) * 10 + get<1>(posValList[posValList.size() - 1]);
         output += val;
     }
 
