@@ -2,12 +2,14 @@
 #include <vector>
 #include <string>
 #include <fstream>
+
+using namespace std;
 bool isSymbol(char c)
 {
     return c != '.' && !isdigit(c);
 }
 
-bool isPartNumber(int i, int start, int end, const std::vector<std::string> &schematic)
+bool isPartNumber(int i, int start, int end, const vector<string> &schematic)
 {
     int rows = schematic.size();
     int cols = schematic[0].size();
@@ -32,30 +34,8 @@ bool isPartNumber(int i, int start, int end, const std::vector<std::string> &sch
     return false;
 }
 
-// ...
-
-int main()
+int partOne(vector<string> schematic)
 {
-    // ...
-
-    std::vector<std::string> schematic;
-    std::ifstream file("input/inputday3.txt");
-
-    if (file.is_open())
-    {
-        std::string line;
-        while (std::getline(file, line))
-        {
-            schematic.push_back(line);
-        }
-        file.close();
-    }
-    else
-    {
-        std::cout << "Unable to open file";
-        return 1; // Exit with an error code
-    }
-
     int sum = 0;
 
     for (int i = 0; i < schematic.size(); ++i)
@@ -71,7 +51,7 @@ int main()
                     ++end;
                 }
 
-                int partNumber = std::stoi(schematic[i].substr(j, end - j));
+                int partNumber = stoi(schematic[i].substr(j, end - j));
 
                 if (isPartNumber(i, j, end, schematic))
                 {
@@ -86,8 +66,30 @@ int main()
             }
         }
     }
+    return sum;
+}
 
-    std::cout << "Sum: " << sum << std::endl;
+int main()
+{
+    vector<string> schematic;
+    ifstream file("input/inputday3.txt");
+
+    if (file.is_open())
+    {
+        string line;
+        while (getline(file, line))
+        {
+            schematic.push_back(line);
+        }
+        file.close();
+    }
+    else
+    {
+        cout << "Unable to open file";
+        return 1; // Exit with an error code
+    }
+
+    cout << "PartOne: " << partOne(schematic) << endl;
 
     return 0;
 }

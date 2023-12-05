@@ -24,18 +24,7 @@ int partOne(vector<string> inputList)
             }
         }
 
-        if (listOfInt.size() == 0)
-        {
-            break;
-        }
-        if (listOfInt.size() < 2)
-        {
-            val += listOfInt[0] * 10 + listOfInt[0];
-        }
-        else
-        {
-            val += listOfInt[0] * 10 + listOfInt[listOfInt.size() - 1];
-        }
+        val += listOfInt[0] * 10 + listOfInt[listOfInt.size() - 1];
         output += val;
     }
 
